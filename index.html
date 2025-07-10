@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notícias sobre Vivo e TIM.">
+    <meta name="keywords" content="notícias, Vivo, TIM, telecomunicações, internet, telefonia móvel">
+    <meta name="author" content="Seu Nome">
+    <meta name="robots" content="index, follow">
+    <title>Notícias Vivo e TIM</title>
+
+    <style>
+        /* Reset básico de estilos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #0074b7;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .news-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .news-container h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .news-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #e0f7fa;
+            border-radius: 5px;
+            border: 1px solid #0074b7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #0074b7;
+            text-decoration: none;
+        }
+
+        .random-container {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            padding: 10px;
+            background-color: #e0f7fa;
+            border: 1px solid #0074b7;
+            border-radius: 5px;
+        }
+
+        /* Estilo da propaganda piscante */
+        .ad-banner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #0074b7;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            font-size: 1.2rem;
+            animation: blink 1s infinite alternate;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 70%;
+            max-width: 400px;
+        }
+
+        /* Animação de piscar */
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .ad-banner button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .ad-banner button:hover {
+            color: #f2a500;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Notícias Vivo e TIM</h1>
+    </header>
+
+    <!-- Propaganda piscante -->
+    <div class="ad-banner" id="ad-banner">
+        <span><a href="https://victorxx.github.io/topicogithub01/randomizador.html">CONFIRA A OPORTUNIDADE</a></span>
+        <button onclick="closeAd()">X</button>
+    </div>
+
+    <section>
+        <div class="news-container">
+            <h2>Últimas Notícias</h2>
+            
+            <div class="news-item" id="vivo-news">
+                <!-- Notícias da Vivo serão exibidas aqui -->
+            </div>
+            
+            <div class="news-item" id="tim-news">
+                <!-- Notícias da TIM serão exibidas aqui -->
+            </div>
+
+            <div class="random-container" id="random-content">
+                <!-- Números e letras aleatórias serão exibidos aqui -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><a href="https://victorxx.github.io/topicogithub01/randomizador.html">Política de Privacidade</a> | <a href="https://victorxx.github.io/topicogithub01/randomizador.html">Termos de Serviço</a></p>
+    </footer>
+
+    <script>
+        // Arrays com as notícias
+        const vivoNews = [
+            "Vivo lança plano de internet 5G em mais 10 cidades brasileiras.",
+            "Vivo amplia cobertura de fibra ótica no Brasil.",
+            "Vivo oferece descontos especiais para clientes de planos pós-pago.",
+            "Vivo apresenta nova plataforma de TV por streaming.",
+            "Vivo realiza parceria com grandes marcas para descontos exclusivos em serviços.",
+            "Vivo investe em infraestrutura para suportar o aumento da demanda por dados móveis.",
+            "Vivo oferece bônus de internet para clientes que recomendam novos usuários.",
+            "Vivo implementa nova tecnologia para melhorar a qualidade da rede 4G.",
+            "Vivo lança app de saúde para seus clientes com recursos exclusivos.",
+            "Vivo oferece novos pacotes de dados móveis com maior quantidade de GB para seus clientes.",
+            "Vivo expande seu atendimento digital com chatbot para clientes empresariais.",
+            "Vivo patrocina evento de inovação e tecnologia em São Paulo.",
+            "Vivo oferece descontos especiais para novos planos pós-pago.",
+            "Vivo apresenta nova oferta de fibra óptica com velocidades mais altas para empresas.",
+            "Vivo investe em energia limpa para suas operações e data centers.",
+            "Vivo cria programa de fidelidade para premiar clientes de longo prazo.",
+            "Vivo expande seus serviços de home office para ajudar empresas durante a pandemia."
+        ];
+
+        const timNews = [
+            "TIM amplia sua cobertura 5G em diversas cidades do Brasil.",
+            "TIM anuncia novos planos de dados ilimitados para smartphones.",
+            "TIM cria parceria com Netflix para oferecer assinatura de vídeo streaming.",
+            "TIM oferece descontos em planos de telefonia para clientes que contratem planos corporativos.",
+            "TIM lança novas ofertas de pacotes de dados para clientes pré-pago.",
+            "TIM amplia a cobertura de fibra ótica para 200 cidades em todo o Brasil.",
+            "TIM anuncia promoções especiais para clientes que contratam serviços de TV por assinatura.",
+            "TIM aposta no crescimento do 5G e investe em infraestrutura em todo o Brasil.",
+            "TIM oferece 50% de desconto em planos de dados para novos clientes.",
+            "TIM expande seu atendimento digital com melhorias em seus canais online.",
+            "TIM começa a oferecer planos de internet móvel mais rápidos e acessíveis.",
+            "TIM firma parceria com grandes marcas para oferecer descontos exclusivos aos seus clientes.",
+            "TIM lança nova plataforma de streaming com conteúdo exclusivo para seus usuários.",
+            "TIM cria novo pacote com desconto para usuários que compartilham internet com amigos.",
+            "TIM expande o acesso a seu serviço de suporte técnico online com atendimento ao vivo.",
+            "TIM oferece novos pacotes de dados para empresas que necessitam de soluções móveis avançadas.",
+            "TIM investe em ações de sustentabilidade e energias renováveis em seus centros de dados."
+        ];
+
+        // Função para exibir as notícias
+        function displayNews() {
+            // Exibindo as notícias da Vivo
+            const vivoContainer = document.getElementById('vivo-news');
+            vivoNews.forEach(news => {
+                const newsElement = document.createElement('p');
+                newsElement.textContent = news;
+                vivoContainer.appendChild(newsElement);
+            });
+
+            // Exibindo as notícias da TIM
+            const timContainer = document.getElementById('tim-news');
+            timNews.forEach(news => {
+                const newsElement = document.createElement('p');
+                newsElement.textContent = news;
+                timContainer.appendChild(newsElement);
+            });
+        }
+
+        // Função para gerar conteúdo randomizado
+        function generateRandomContent() {
+            // Gerando número aleatório entre 1 e 100
+            const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+            // Gerando uma letra aleatória
+            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const randomLetter = letters.charAt(Math.floor(Math.random() * letters.length));
+
+            // Exibindo o conteúdo randomizado
+            const randomContent = `Número aleatório: ${randomNumber} | Letra aleatória: ${randomLetter}`;
+            document.getElementById('random-content').textContent = randomContent;
+        }
+
+        // Função para fechar a propaganda
+        function closeAd() {
+            const adBanner = document.getElementById('ad-banner');
+            adBanner.style.display = 'none';  // Esconde o banner
+        }
+
+        // Chama as funções quando a página carrega
+        window.onload = () => {
+            displayNews(); // Exibe as notícias
+            generateRandomContent(); // Gera conteúdo randomizado
+        };
+    </script>
+
+</body>
+</html>
